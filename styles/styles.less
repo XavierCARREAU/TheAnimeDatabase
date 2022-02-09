@@ -1,0 +1,228 @@
+/* CSS Document */
+
+									/* Importer une font*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+								/* déclaration des variables */
+
+@texteNoir:#313131;
+@texteBlanc: #ffffff;
+
+								/* déclaration des fonctions */
+
+
+// .buttonCTA(){
+// 	background-color: @darkRed;
+// 	padding: 10px 25px;
+// }
+
+									/* style CSS génaral */
+
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	color: @texteNoir;
+}
+
+/* style titres */
+
+h1,h2,h3,h4,h5,h6{
+	line-height: 2.5em;
+}
+h1{
+    font-size: 3em;
+}
+h2{
+    font-size: 2em;
+}
+h3{
+    font-size: 1.5em;
+}
+h4{
+    font-size: 1.25em;
+}
+h5{
+    font-size: 1.15em;
+}
+h6{
+    font-size: 1.1em;
+}
+
+a{
+	text-decoration: none;
+	color: @texteNoir;
+	&:hover{
+		color: @texteNoir;
+	}
+	&:active{
+		color: @texteNoir;
+	}
+}
+
+/* Style des listes ul*/
+
+ul{
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 30px;
+}
+li>ul{
+    list-style-type: circle;
+}
+li>ul>li>ul{
+    list-style-type: square;
+}
+
+/* Style des listes ol*/
+
+ol{
+    list-style-type: upper-roman;
+    list-style-position: outside;
+    margin-left: 30px;
+}
+li>ol{
+    list-style-type:decimal;
+}
+li>ol>li>ol{
+    list-style-type: lower-alpha;
+}
+
+
+								/* Header */
+
+
+#header{
+	padding: 50px 0;
+	h1{
+		color: #888;
+		font-size: 42px;
+		font-weight: 400;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		strong{
+			color: @texteNoir;
+		}
+	}
+	#search-form{
+		display: flex;
+		justify-content: center;
+		padding: 0 30px;
+		.search-bar{
+			appearance: none;
+			background: none;
+			border: none;
+			outline: none;
+
+			background-color: #f3f3f3;
+			box-shadow: 0px 4px 8px rgba(0, 4, 8, 0.15);
+			display: block;
+			width: 100%;
+			max-width: 600px;
+			padding: 15px;
+			border-radius: 8px;
+
+			color: @texteNoir;
+			font-size: 20px;
+
+			transition: 0.4s;
+
+			&::placeholder{
+				color: #AAA;
+			}
+
+			&:focus, &:valid{
+				color: #FFF;
+				background-color: @texteNoir;
+				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+			}
+		}
+	}
+}
+
+#main{
+	margin: 0 auto;
+	padding: 0 30px;
+	.cards{
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -8px;
+		.card{
+			flex: 1 1 33%;
+			width: 33%;
+			max-width: 33%;
+			padding: 0 8px;
+			margin-bottom: 16px;
+			border: none;
+			
+
+			img{
+				width: 100%;
+				// max-height: 600px;
+				object-fit: cover;
+				border-radius: 16px;
+				box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+				transition: 0.4s;
+			}
+			h3{
+				padding: 16px;
+				color: @texteNoir;
+				transition: 0.4s;
+			}
+
+			&:hover{
+				img{
+					transform: scale(1.05);
+				}
+				h3{
+					color: #F8731A;
+
+				}
+			}
+		}
+	}
+}
+
+	
+
+
+
+
+
+								
+/* Responsive */
+/* 
+
+@media screen and (max-width:1200px){
+	
+}
+
+@media screen and (max-width:992px){
+	.container{
+		width: 100%;
+	}	
+}
+
+@media screen and (max-width:992px) and (orientation:portrait) ou landscape{
+}
+
+@media screen and (max-width:768px){
+	
+}
+
+@media screen and (min-width:576px) and (max-width:768px){
+	
+} 
+
+@media screen and (max-width:576px){
+	
+} 
+
+*/
