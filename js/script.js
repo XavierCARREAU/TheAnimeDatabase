@@ -7,8 +7,6 @@ function searchAnime(event){
 
     const form = new FormData(this);
     const query = form.get("search"); //entrée de l'utilisateur
-
-    // console.table(query);
     
     //emission et retour recherche
     if(document.getElementById("anime").checked) {
@@ -16,14 +14,11 @@ function searchAnime(event){
             .then((res) => res.json())
             .then(updateDom)
             .catch((err) => console.warn(err.message));
-            console.log("anime");
-        
     }else if(document.getElementById("manga").checked) {
         fetch(`${url}/search/manga?q=${query}`)
             .then((res) => res.json())
             .then(updateDom)
             .catch((err) => console.warn(err.message)); 
-            console.log("manga")
     };
 }
 
@@ -46,7 +41,6 @@ function updateDom(data){
     });
 }
   
-
     //vérification du form
 function pageLoaded(){
     const form = document.getElementById("search-form");
