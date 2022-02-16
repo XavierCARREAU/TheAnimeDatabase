@@ -144,6 +144,28 @@ li>ol>li>ol{
 				box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
 			}
 		}
+		#select{
+			display: flex;
+			justify-content:center;
+			input[type=radio] { 
+				display: none;
+				&:checked + label{
+					background-color: #F8731A; 
+					transition: 0.3s;
+				}
+			}
+			label {
+				display:inline-block;
+				background-color: @texteNoir;
+				
+				box-shadow: 0px 4px 8px rgba(0, 4, 8, 0.15);
+				border-radius: 8px;
+				margin: 0 10px;
+				color: #fff;
+				padding: 10px 30px;
+			}
+			
+		}
 	}
 }
 
@@ -161,11 +183,9 @@ li>ol>li>ol{
 			padding: 0 8px;
 			margin-bottom: 16px;
 			border: none;
-			
-
 			img{
 				width: 100%;
-				// max-height: 600px;
+				max-height: 600px;
 				object-fit: cover;
 				border-radius: 16px;
 				box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
@@ -175,6 +195,8 @@ li>ol>li>ol{
 				padding: 16px;
 				color: @texteNoir;
 				transition: 0.4s;
+				line-height: 1em;
+				text-align: center;
 			}
 
 			&:hover{
@@ -183,7 +205,6 @@ li>ol>li>ol{
 				}
 				h3{
 					color: #F8731A;
-
 				}
 			}
 		}

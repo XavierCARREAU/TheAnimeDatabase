@@ -1,5 +1,6 @@
 const url = `https://api.jikan.moe/v3`;
 
+
 //logique de la barre de recherche
 function searchAnime(event){
     event.preventDefault();
@@ -8,12 +9,22 @@ function searchAnime(event){
     const query = form.get("search"); //entrée de l'utilisateur
 
     // console.table(query);
-
+    
     //emission et retour recherche
-    fetch(`${url}/search/manga?q=${query}`)
-      .then((res) => res.json())
-      .then(updateDom)
-      .catch((err) => console.warn(err.message));
+    if(document.getElementById("anime").checked) {
+        fetch(`${url}/search/anime?q=${query}`)
+            .then((res) => res.json())
+            .then(updateDom)
+            .catch((err) => console.warn(err.message));
+            console.log("anime");
+        
+    }else if(document.getElementById("manga").checked) {
+        fetch(`${url}/search/manga?q=${query}`)
+            .then((res) => res.json())
+            .then(updateDom)
+            .catch((err) => console.warn(err.message)); 
+            console.log("manga")
+    };
 }
 
 
@@ -22,8 +33,8 @@ function updateDom(data){
     const searchResults = document.getElementById("search-results");
     
     searchResults.innerHTML = data.results
-    .sort((a,b)=>a.episodes+b.episodes)
-    .map(anime=>{
+      .sort()
+      .map((anime) => {
         return `
             <div class="card">
                 <a href="${anime.url}" target="_blank">
@@ -34,10 +45,14 @@ function updateDom(data){
         `;
     });
 }
-    //vérification du submit
+  
+
+    //vérification du form
 function pageLoaded(){
     const form = document.getElementById("search-form");
     form.addEventListener("keyup", searchAnime);
-}
+    form.addEventListener("submit", searchAnime);
+    form.addEventListener("change", searchAnime);
+}   
 
 window.addEventListener("load", pageLoaded)

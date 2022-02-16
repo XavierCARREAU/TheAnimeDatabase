@@ -24,12 +24,29 @@
 	<header id="header">
 		<div class="container">
 			<div class="row">
-				<h1>The<strong>Anime</strong>Data</h1>
-			</div>
+				<h1 class="col-md-12">The<strong>Anime</strong>Data</h1>
 
-			<form id="search-form">
-				<input type="search" class="search-bar" name="search" id="search" placeholder="Recherchez un anime..." required>
-			</form>
+				<form class="col-md-12" id="search-form">
+					<div class="row">
+						<div class="col-12">
+							<input type="search" class="search-bar" name="search" id="search" placeholder="Recherchez un anime ou un manga..." required><br>
+						</div>
+						
+						<div class="col-12" id="select">
+
+							
+							<input type="radio" name="type" id="anime" checked>
+							<label for="anime">Animes</label>
+
+							
+							<input type="radio" name="type" id="manga">
+							<label for="manga">Mangas</label>
+							
+						</div>
+					</div>
+				</form>
+			</div>	
+			
 		</div>
 	</header>
 	<main id="main">
